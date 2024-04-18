@@ -8,7 +8,7 @@ export default function App() {
       <Text className="text-2xl mb-3">HRWells presents</Text>
       <Text className="text-3xl font-pblack">Hora!</Text>
       <StatusBar style="auto" />
-      <Link href={"/profile"} className="text-blue-600 mt-1">
+      <Link href={"/home"} className="text-blue-600 mt-1">
         Go to Profile
       </Link>
     </View>
