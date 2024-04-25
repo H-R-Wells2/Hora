@@ -23,7 +23,8 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff",
         "package": "com.hrwells.hora"
-      }
+      },
+      "package": "com.hrwells.hora"
     },
     "web": {
       "favicon": "./assets/favicon.png"
