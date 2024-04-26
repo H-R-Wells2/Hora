@@ -13,13 +13,13 @@ import { useState } from "react";
 import { ResizeMode, Video } from "expo-av";
 import { icons } from "../../constants";
 import { router } from "expo-router";
-import * as DocumentPicker from 'expo-document-picker'
-import {useGlobalContext} from '../../context/GlobalProvider' 
+import * as DocumentPicker from "expo-document-picker";
+import { useGlobalContext } from "../../context/GlobalProvider";
 import { createVideoPost } from "../../lib/appwrite";
-
+import * as ImagePicker from "expo-image-picker";
 
 const Create = () => {
-  const { user } = useGlobalContext()
+  const { user } = useGlobalContext();
   const [uploading, setUploading] = useState(false);
   const [form, setForm] = useState({
     title: "",
@@ -62,11 +62,13 @@ const Create = () => {
   };
 
   const openPicker = async (selectType) => {
-    const result = await DocumentPicker.getDocumentAsync({
-      type:
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes:
         selectType === "image"
-          ? ["image/png", "image/jpg", "image/jpeg"]
-          : ["video/mp4", "video/gif"],
+          ? ImagePicker.MediaTypeOptions.Images
+          : ImagePicker.MediaTypeOptions.Videos,
+      aspect: [4, 3],
+      quality: 1,
     });
 
     if (!result.canceled) {
