@@ -38,9 +38,7 @@ const Home = () => {
         // data={[{ id: 1 }, { id: 2 }, { id: 3 }]}
         data={posts}
         keyExtractor={(item) => item.$id}
-        renderItem={({ item }) => (
-          <VideoCard video={item} />
-        )}
+        renderItem={({ item }) => <VideoCard video={item} />}
         ListHeaderComponent={() => (
           <View className="my-6 px-4 space-y-4">
             <View className="justify-between items-start flex-row mb-6">

@@ -9,7 +9,6 @@ import EmptyState from "../../components/EmptyState";
 import VideoCard from "../../components/VideoCard";
 import SearchInput from "../../components/SearchInput";
 
-
 const Search = () => {
   const { query } = useLocalSearchParams();
   const { data: posts, refetch } = useAppwrite(() => searchPosts(query));
@@ -24,9 +23,7 @@ const Search = () => {
         data={posts}
         keyExtractor={(item) => item.$id}
         renderItem={({ item }) => (
-          <VideoCard
-            video={item}
-          />
+          <VideoCard video={item} />
           // <Text>OK</Text>
         )}
         ListHeaderComponent={() => (
