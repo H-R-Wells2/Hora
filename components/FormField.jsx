@@ -25,10 +25,15 @@ const FormField = ({
           secureTextEntry={title === "Password" && !showPassword}
         />
 
-        {title === "Password" && (<TouchableOpacity onPress={()=>setShowPassword(!showPassword)}>
-            <Image source={!showPassword ? icons.eye : icons.eyeHide}  className="w-7 h-7" resizeMode="contain" />
-        </TouchableOpacity>)}
-
+        {title === "Password" && (
+          <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+            <Image
+              source={!showPassword ? icons.eye : icons.eyeHide}
+              className="w-7 h-7"
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
+        )}
       </View>
     </View>
   );
