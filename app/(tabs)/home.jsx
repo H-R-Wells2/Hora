@@ -30,12 +30,10 @@ const Home = () => {
     setRefreshing(false);
   };
 
-  // console.log(posts);
 
   return (
     <SafeAreaView className="bg-primary h-full">
       <FlatList
-        // data={[{ id: 1 }, { id: 2 }, { id: 3 }]}
         data={posts}
         keyExtractor={(item) => item.$id}
         renderItem={({ item }) => <VideoCard video={item} />}
